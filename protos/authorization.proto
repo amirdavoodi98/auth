@@ -1,0 +1,17 @@
+syntax = "proto3";
+package authorization;
+
+service Authorization {
+    rpc isAdmin(AuthorizationRequest) returns (AuthorizationResponse);
+    rpc isBankManager(AuthorizationRequest) returns (AuthorizationResponse);
+    rpc isBranchManager(AuthorizationRequest) returns (AuthorizationResponse);
+    rpc isEmployee(AuthorizationRequest) returns (AuthorizationResponse);
+    rpc isCustomer(AuthorizationRequest) returns (AuthorizationResponse);
+}
+
+message AuthorizationRequest {
+}
+
+message AuthorizationResponse {
+    int64 resp = 1;
+}
